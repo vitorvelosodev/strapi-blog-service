@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idPost": {
+      "type": "uid"
+    },
+    "postContent": {
+      "type": "richtext"
+    },
+    "postTitle": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "datetime"
+    },
+    "hasBeenUpdated": {
+      "type": "boolean"
+    },
+    "updateDate": {
+      "type": "datetime"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "posts"
+    }
+  }
+}
